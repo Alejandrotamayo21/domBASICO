@@ -4,11 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ejercicio 5: Presupuesto de un evento</title>
-
-  <!--
-    REQUISITO: vincula aquí tu propio archivo CSS.
-    Ejemplo: <link rel="stylesheet" href="estilos.css">
-  -->
 </head>
 <body>
 
@@ -28,52 +23,28 @@
     <strong>tabla</strong>.
   </p>
 
-  <!--
-    Instrucciones:
-    1. Los inputs no tienen id ni name: accede a ellos desde tu JS
-       recorriendo el DOM del formulario.
-    2. Agrega el atributo onclick al botón "Calcular presupuesto",
-       apuntando a una función de tu JS.
-    3. En tu JS debes calcular, usando variables, al menos:
-       - comida total = invitados * costo de comida por invitado
-       - bebida total = invitados * costo de bebida por invitado
-       - subtotal = comida total + bebida total + decoración + música
-       - propina = subtotal * (porcentaje de propina / 100)
-       - total general = subtotal + propina
-       - costo por invitado = total general / invitados
-    4. Las celdas de la columna "Valor" de la tabla tampoco tienen id ni
-       name: accede a ellas recorriendo las filas de la tabla
-       (querySelectorAll('tbody tr'), children, etc.) y escribe ahí cada
-       resultado.
-    5. Valida qué pasa si el número de invitados es 0 o está vacío.
-    6. Todos los valores de la tabla son dinero: antes de escribirlos en la
-       celda, fórmatealos con toLocaleString() (por ejemplo:
-       totalGeneral.toLocaleString('es-CO')).
-    7. Crea y vincula tu propio CSS y tu propio JS.
-  -->
-
   <form>
     <p>
-      <label>Número de invitados: <input type="number" placeholder="Número de invitados"></label>
+      <label>Número de invitados: <input type="number" id="invitados" placeholder="Número de invitados"></label>
     </p>
     <p>
-      <label>Costo de comida por invitado: <input type="number" placeholder="Costo de comida por invitado"></label>
+      <label>Costo de comida por invitado: <input type="number" id="costoComida" placeholder="Costo de comida por invitado"></label>
     </p>
     <p>
-      <label>Costo de bebida por invitado: <input type="number" placeholder="Costo de bebida por invitado"></label>
+      <label>Costo de bebida por invitado: <input type="number" id="costoBebida" placeholder="Costo de bebida por invitado"></label>
     </p>
     <p>
-      <label>Costo de decoración: <input type="number" placeholder="Costo de decoración"></label>
+      <label>Costo de decoración: <input type="number" id="costoDecoracion" placeholder="Costo de decoración"></label>
     </p>
     <p>
-      <label>Costo de música/animación: <input type="number" placeholder="Costo de música/animación"></label>
+      <label>Costo de música/animación: <input type="number" id="costoMusica" placeholder="Costo de música/animación"></label>
     </p>
     <p>
-      <label>Propina para el personal (%): <input type="number" placeholder="Propina para el personal (%)"></label>
+      <label>Propina para el personal (%): <input type="number" id="porcentajePropina" placeholder="Propina para el personal (%)"></label>
     </p>
 
     <p>
-      <button type="button">Calcular presupuesto</button>
+      <button type="button" onclick="calcularPresupuesto()">Calcular presupuesto</button>
     </p>
   </form>
 
@@ -88,42 +59,39 @@
     <tbody>
       <tr>
         <td>Comida total</td>
-        <td></td>
+        <td id="tdComida"></td>
       </tr>
       <tr>
         <td>Bebida total</td>
-        <td></td>
+        <td id="tdBebida"></td>
       </tr>
       <tr>
         <td>Decoración</td>
-        <td></td>
+        <td id="tdDecoracion"></td>
       </tr>
       <tr>
         <td>Música/animación</td>
-        <td></td>
+        <td id="tdMusica"></td>
       </tr>
       <tr>
         <td>Subtotal</td>
-        <td></td>
+        <td id="tdSubtotal"></td>
       </tr>
       <tr>
         <td>Propina</td>
-        <td></td>
+        <td id="tdPropina"></td>
       </tr>
       <tr>
         <td>Total general</td>
-        <td></td>
+        <td id="tdTotal"></td>
       </tr>
       <tr>
         <td>Costo por invitado</td>
-        <td></td>
+        <td id="tdPorInvitado"></td>
       </tr>
     </tbody>
   </table>
 
-  <!--
-    REQUISITO: vincula aquí tu propio archivo JS.
-    Ejemplo: <script src="otra.js"></script>
-  -->
+  <script src="presupuesto.js"></script>
 </body>
 </html>

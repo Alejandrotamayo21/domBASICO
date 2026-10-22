@@ -4,11 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ejercicio 2: Total de venta</title>
-
-  <!--
-    REQUISITO: vincula aquí tu propio archivo CSS.
-    Ejemplo: <link rel="stylesheet" href="estilos.css">
-  -->
 </head>
 <body>
 
@@ -26,53 +21,35 @@
     descuento restado.
   </p>
 
-  <!--
-    Instrucciones:
-    1. Define tú mismo el porcentaje de IVA a aplicar (por ejemplo 19%).
-    2. Define tú mismo una regla de descuento (por ejemplo: si la cantidad es
-       mayor a 10 unidades, aplica un 5% de descuento sobre el subtotal).
-    3. Los inputs no tienen id ni name: accede a ellos desde tu JS recorriendo
-       el DOM del formulario.
-    4. Agrega el atributo onclick al botón "Calcular", apuntando a una función
-       de tu JS.
-    5. El Subtotal, el IVA, el Descuento y el Total a pagar son valores en
-       dinero: antes de mostrarlos, fórmatealos con toLocaleString() (por
-       ejemplo: subtotal.toLocaleString('es-CO')).
-    6. Crea y vincula tu propio CSS y tu propio JS.
-  -->
-
   <form>
     <p>
-      <label>Nombre del producto: <input type="text" placeholder="Nombre del producto"></label>
+      <label>Nombre del producto: <input type="text" id="producto" placeholder="Nombre del producto"></label>
     </p>
     <p>
-      <label>Cantidad: <input type="number" placeholder="Cantidad"></label>
+      <label>Cantidad: <input type="number" id="cantidad" placeholder="Cantidad"></label>
     </p>
     <p>
-      <label>Precio unitario: <input type="number" placeholder="Precio unitario"></label>
-    </p>
-
-    <p>
-      <button type="button">Calcular</button>
+      <label>Precio unitario: <input type="number" id="precio" placeholder="Precio unitario"></label>
     </p>
 
     <p>
-      <label>Subtotal: <input type="text" placeholder="Subtotal" readonly></label>
+      <button type="button" onclick="calcularVenta()">Calcular</button>
+    </p>
+
+    <p>
+      <label>Subtotal: <input type="text" id="subtotal" placeholder="Subtotal" readonly></label>
     </p>
     <p>
-      <label>IVA: <input type="text" placeholder="IVA" readonly></label>
+      <label>IVA: <input type="text" id="iva" placeholder="IVA" readonly></label>
     </p>
     <p>
-      <label>Descuento: <input type="text" placeholder="Descuento" readonly></label>
+      <label>Descuento: <input type="text" id="descuento" placeholder="Descuento" readonly></label>
     </p>
     <p>
-      <label>Total a pagar: <input type="text" placeholder="Total a pagar" readonly></label>
+      <label>Total a pagar: <input type="text" id="total" placeholder="Total a pagar" readonly></label>
     </p>
   </form>
 
-  <!--
-    REQUISITO: vincula aquí tu propio archivo JS.
-    Ejemplo: <script src="venta.js"></script>
-  -->
+  <script src="venta.js"></script>
 </body>
 </html>
